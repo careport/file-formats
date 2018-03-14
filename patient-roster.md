@@ -62,6 +62,10 @@ A roster file's name has five parts:
 - a timestamp indicating when the file was generated
 - the file extension, which should always be `csv`
 
+The various parts of the file name are separated by underscores (`_`),
+except for the file extension, which, as usual, is separated from the
+rest of the file name by a period (`.`).
+
 More on each:
 
 - The roster name is just a short, descriptive string that identifies the roster, e.g., "ACO" or "northeast." It should contain only letters and numbers.
