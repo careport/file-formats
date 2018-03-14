@@ -90,7 +90,7 @@ Each record in a patient roster file contains the following fields, in the follo
 5. Middle name
 6. Name suffix (e.g., "Jr.," "III", etc.)
 7. \* [Sex](#sex-format)
-8. \* [Date](#date-format) of birth
+8. \* [Date of birth](#date-format)
 9. [SSN](#ssn-format)
 10. [Phone number](#phone-format)
 11. Address line 1
@@ -107,7 +107,7 @@ Fields 9-15 are allowed to be empty, but non-empty values will be useful for mat
 ### Field formats
 #### <a name="date-format"></a>Date format
 
-All dates should be in the ISO 8601 _extended_ date format, `yyyy-mm-dd`, e.g., `2018-03-14`.
+The date of birth should be in the ISO 8601 _extended_ date format, `yyyy-mm-dd`, e.g., `2018-03-14`.
 
 
 #### <a name="sex-format"></a>Sex format
