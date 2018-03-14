@@ -5,19 +5,32 @@
 The overall format of a patient roster is CSV (comma-separated values), as defined by [IETF RFC 4180](https://tools.ietf.org/html/rfc4180).
 Please refer to the RFC for a complete description. An informal description follows:
 
-A CSV file is a sequence of records, one per line. A record is a sequence of fields, which are separated by commas. For example:
-    Doe,John,Indiana
-
+A CSV file is a sequence of records, one per line. A record is a
+sequence of fields, which are separated by commas. For example:
+```csv
+Doe,John,Indiana
+```
 is a record containing three fields. The values of those fields are `Doe`, `John`, and `Indiana`.
 
-A CSV file can start with an optional header line. The header follows the same format as a normal record, but its fields contain the names of each field in the body of the file. We can add a header to our example:
-    Last name,First name,Address
-    Doe,John,Indiana
+A CSV file can start with an optional header line. The header follows
+the same format as a normal record, but its fields contain the names
+of each field in the body of the file. We can add a header to our
+example:
+```csv
+Last name,First name,Address
+Doe,John,Indiana
+```
 
-Since newlines and commas are special characters -- they delimit records and fields, respectively -- they need to be escaped if they appear within a field as part of the data. To escape the content of a field, enclose the field value in double-quote characters. For example, if we wanted to put John Doe's full address, commas and all, in our third field, we could do this:
-    Last name,First name,Address
-    Doe,John,"123 Fake Street, Gary, Indiana 46401"
-
+Since newlines and commas are special characters -- they delimit
+records and fields, respectively -- they need to be escaped if they
+appear within a field as part of the data. To escape the content of a
+field, enclose the field value in double-quote characters. For
+example, if we wanted to put John Doe's full address, commas and all,
+in our third field, we could do this:
+```csv
+Last name,First name,Address
+Doe,John,"123 Fake Street, Gary, Indiana 46401"
+```
 and the value of the `Address` field would be `123 Fake Street, Gary, Indiana 46401`. As you can see, commas within a double-quoted field do not count as delimters; they are part of the field value. If you need to put a double-quote character within a double-quoted field value, use two double-quote characters in a row. For example, let's add a field to John's record:
     Last name,First name,Address,Quotation
     Doe,John,"123 Fake Street, Gary, Indiana 46401","""Exactly so,"" said Alice."
