@@ -103,9 +103,9 @@ Each record in a patient roster file contains the following fields, in the follo
 14. State
 15. [ZIP code](#zip-format)
 
-Fields marked with (\*) are required to have non-empty values.
-
-Fields 9-15 are allowed to be empty, but non-empty values will be useful for matching patients.
+Fields marked with (\*) are required to have non-empty values. Other
+fields are allowed to be empty, but non-empty values will be useful
+for matching patients.
 
 
 ### Field formats
