@@ -31,10 +31,16 @@ in our third field, we could do this:
 Last name,First name,Address
 Doe,John,"123 Fake Street, Gary, Indiana 46401"
 ```
-and the value of the `Address` field would be `123 Fake Street, Gary, Indiana 46401`. As you can see, commas within a double-quoted field do not count as delimters; they are part of the field value. If you need to put a double-quote character within a double-quoted field value, use two double-quote characters in a row. For example, let's add a field to John's record:
-    Last name,First name,Address,Quotation
-    Doe,John,"123 Fake Street, Gary, Indiana 46401","""Exactly so,"" said Alice."
-
+and the value of the `Address` field would be `123 Fake Street, Gary,
+Indiana 46401`. As you can see, commas within a double-quoted field do
+not count as delimters; they are part of the field value. If you need
+to put a double-quote character within a double-quoted field value,
+use two double-quote characters in a row. For example, let's add a
+field to John's record:
+```csv
+Last name,First name,Address,Quotation
+Doe,John,"123 Fake Street, Gary, Indiana 46401","""Exactly so,"" said Alice."
+```
 The value of the `Quotation` field is `"Exactly so," said Alice."`
 
 
