@@ -64,14 +64,14 @@ A patient roster does not require a header line, but you can provide one if you 
 
 Each record in a patient roster file contains the following fields, in the following order:
 
-1. * Type of unique patient identitifer (e.g, MRN, Insurance member ID, etc.)
-2. * Unique patient identifier
-3. * Last name
-4. * First name
+1. \* Type of unique patient identitifer (e.g, MRN, Insurance member ID, etc.)
+2. \* Unique patient identifier
+3. \* Last name
+4. \* First name
 5. Middle name
 6. Name suffix (e.g., "Jr.," "III", etc.)
-7. * [Sex](#sex-format)
-8. * [Date](#date-format) of birth
+7. \* [Sex](#sex-format)
+8. \* [Date](#date-format) of birth
 9. [SSN](#ssn-format)
 10. [Phone number](#phone-format)
 11. Address line 1
@@ -80,7 +80,7 @@ Each record in a patient roster file contains the following fields, in the follo
 14. State
 15. [ZIP code](#zip-format)
 
-Fields marked with (*) are required to have non-empty values.
+Fields marked with (\*) are required to have non-empty values.
 
 Fields 9-15 are allowed to be empty, but non-empty values will be useful for matching patients.
 
