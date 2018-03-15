@@ -41,7 +41,7 @@ field to John's record:
 Last name,First name,Address,Quotation
 Doe,John,"123 Fake Street, Gary, Indiana 46401","""Exactly so,"" said Alice."
 ```
-The value of the `Quotation` field is `"Exactly so," said Alice."`
+The value of the `Quotation` field is `"Exactly so," said Alice.`
 
 
 ## Character encoding
