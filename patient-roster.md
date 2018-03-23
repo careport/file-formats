@@ -80,7 +80,7 @@ More on each:
 - The reporting period duration is either `month` or `week`.
 - The reporting period start date is the first date of the reporting period in ISO 8601 basic date format. For example, `20180301` is the first of March, 2018.
 - The timestamp is a UTC date and time in ISO 8601 basic date/time format. For example, `20180314T190400Z` is March 14, 2018 at 19:04 (i.e., 7:04PM) in UTC, or the same date at 3:04PM in US Eastern time.
-- The patient roster specification version is the version number of this document, preceded by `v`. For example, `v1` indicates that the file conforms to version 1 of the patient roster specification
+- The patient roster specification version is the version number of this document, preceded by `v`. For example, `v1` indicates that the file conforms to version 1 of the patient roster specification.
 
 Putting those together, the file name would be:
 
@@ -113,22 +113,25 @@ Each record in a patient roster file contains the following fields, in the follo
 13. City
 14. State
 15. [ZIP code](#zip-format)
-16. Primary Care Physician name
-17. Primary Care Physician NPI
-18. Primary Care Physician [phone number](#phone-format)
-19. Primary Care Physician email
-20. Primary payer
-21. Primary payer patient identification number
-22. [Tag 1](#tag-details)
-23. Tag 2
-24. Tag 3
-25. Tag 4
-26. Tag 5
-27. Tag 6
-28. Tag 7
-29. Tag 8
-30. Tag 9
-31. Tag 10
+16. Care coordinator name
+17. Care coordinator [phone number](#phone-format)
+18. Care coordinator email
+19. Primary Care Physician name
+20. Primary Care Physician NPI
+21. Primary Care Physician [phone number](#phone-format)
+22. Primary Care Physician email
+23. Primary payer
+24. Primary payer patient identification number
+25. [Tag 1](#tag-details)
+26. Tag 2
+27. Tag 3
+28. Tag 4
+29. Tag 5
+30. Tag 6
+31. Tag 7
+32. Tag 8
+33. Tag 9
+34. Tag 10
 
 Fields marked with (\*) are required to have non-empty values. Other
 fields are allowed to be empty, but non-empty values will be useful
