@@ -7,15 +7,18 @@ Please refer to the RFC for a complete description. An informal description foll
 
 A CSV file is a sequence of records, one per line. A record is a
 sequence of fields, which are separated by commas. For example:
+
 ```csv
 Doe,John,Indiana
 ```
+
 is a record containing three fields. The values of those fields are `Doe`, `John`, and `Indiana`.
 
 A CSV file can start with an optional header line. The header follows
 the same format as a normal record, but its fields contain the names
 of each field in the body of the file. We can add a header to our
 example:
+
 ```csv
 Last name,First name,Address
 Doe,John,Indiana
@@ -27,20 +30,24 @@ appear within a field as part of the data. To escape the content of a
 field, enclose the field value in double-quote characters. For
 example, if we wanted to put John Doe's full address, commas and all,
 in our third field, we could do this:
+
 ```csv
 Last name,First name,Address
 Doe,John,"123 Fake Street, Gary, Indiana 46401"
 ```
+
 and the value of the `Address` field would be `123 Fake Street, Gary,
 Indiana 46401`. As you can see, commas within a double-quoted field do
 not count as delimiters; they are part of the field value. If you need
 to put a double-quote character within a double-quoted field value,
 use two double-quote characters in a row. For example, let's add a
 field to John's record:
+
 ```csv
 Last name,First name,Address,Quotation
 Doe,John,"123 Fake Street, Gary, Indiana 46401","""Exactly so,"" said Alice."
 ```
+
 The value of the `Quotation` field is `"Exactly so," said Alice.`
 
 
@@ -75,7 +82,9 @@ More on each:
 - The timestamp is a UTC date and time in ISO 8601 basic date/time format. For example, `20180314T190400Z` is March 14, 2018 at 19:04 (i.e., 7:04PM) in UTC, or the same date at 3:04PM in US Eastern time.
 - The patient roster specification version is the version number of this document, preceded by `v`. For example, `v1` indicates that the file conforms to version 1 of the patient roster specification
 
-Putting those together, the file name would be: `ACO_month_20180301_20180314T190400Z_v1.csv`.
+Putting those together, the file name would be:
+
+ `ACO_month_20180301_20180314T190400Z_v1.csv`
 
 Together, the reporting period duration and start date indicate that the patients listed in the file are members of the roster for that period. In our example above, each patient in the file would be considered a member of the `ACO` roster for the entire month of March 2018.
 
@@ -160,6 +169,7 @@ The preferred (but not required) format for US phone numbers is
 
 A ZIP code may be formatted either as a 5-digit ZIP or a hyphenated ZIP+4.
 So, `12201` and `12201-7050` are both valid.
+
 
 #### <a name="tag-details"></a>Tags
 
