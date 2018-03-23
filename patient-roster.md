@@ -98,7 +98,7 @@ A patient roster does not require a header line, but you can provide one if you 
 
 Each record in a patient roster file contains the following fields, in the following order:
 
-1. \* Type of unique patient identifier (e.g., MRN, Insurance member ID, etc.)
+1. \* Type of unique patient identifier (from [FHIR identifier type value set](https://www.hl7.org/fhir/valueset-identifier-type.html))
 2. \* Unique patient identifier
 3. \* Last name
 4. \* First name
