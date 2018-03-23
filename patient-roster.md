@@ -1,4 +1,4 @@
-# Patient Roster
+# Patient Roster Specification Version 1
 
 ## CSV
 
@@ -55,11 +55,12 @@ When we set up a new patient roster, please tell us:
 
 ## File name and reporting period
 
-A roster file's name has five parts:
+A roster file's name has six parts:
 - the roster name
 - the reporting period duration
 - the reporting period start date
 - a timestamp indicating when the file was generated
+- the patient roster specification version
 - the file extension, which should always be `csv`
 
 The various parts of the file name are separated by underscores (`_`),
@@ -72,8 +73,9 @@ More on each:
 - The reporting period duration is either `month` or `week`.
 - The reporting period start date is the first date of the reporting period in ISO 8601 basic date format. For example, `20180301` is the first of March, 2018.
 - The timestamp is a UTC date and time in ISO 8601 basic date/time format. For example, `20180314T190400Z` is March 14, 2018 at 19:04 (i.e., 7:04PM) in UTC, or the same date at 3:04PM in US Eastern time.
+- The patient roster specification version is the version number of this document, preceded by `v`. For example, `v1` indicates that the file conforms to version 1 of the patient roster specification
 
-Putting those together, the file name would be: `ACO_month_20180301_20180314T190400Z.csv`.
+Putting those together, the file name would be: `ACO_month_20180301_20180314T190400Z_v1.csv`.
 
 Together, the reporting period duration and start date indicate that the patients listed in the file are members of the roster for that period. In our example above, each patient in the file would be considered a member of the `ACO` roster for the entire month of March 2018.
 
