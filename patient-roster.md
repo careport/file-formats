@@ -102,6 +102,22 @@ Each record in a patient roster file contains the following fields, in the follo
 13. City
 14. State
 15. [ZIP code](#zip-format)
+16. Primary Care Physician name
+17. Primary Care Physician NPI
+18. Primary Care Physician [phone number](#phone-format)
+19. Primary Care Physician email
+20. Primary payer
+21. Primary payer patient identification number
+22. [Tag 1](#tag-details)
+23. Tag 2
+24. Tag 3
+25. Tag 4
+26. Tag 5
+27. Tag 6
+28. Tag 7
+29. Tag 8
+30. Tag 9
+31. Tag 10
 
 Fields marked with (\*) are required to have non-empty values. Other
 fields are allowed to be empty, but non-empty values will be useful
@@ -142,3 +158,10 @@ The preferred (but not required) format for US phone numbers is
 
 A ZIP code may be formatted either as a 5-digit ZIP or a hypenated ZIP+4.
 So, `12201` and `12201-7050` are both valid.
+
+#### <a name="tag-details"></a>Tags
+
+You may provide up to 10 tags for each row in the CSV. CarePort will
+assign these tags as attributions for the patient identified in the row.
+Attributions enable end users to segment patient populations in searches,
+reports, and alerts.
