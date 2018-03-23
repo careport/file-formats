@@ -33,7 +33,7 @@ Doe,John,"123 Fake Street, Gary, Indiana 46401"
 ```
 and the value of the `Address` field would be `123 Fake Street, Gary,
 Indiana 46401`. As you can see, commas within a double-quoted field do
-not count as delimters; they are part of the field value. If you need
+not count as delimiters; they are part of the field value. If you need
 to put a double-quote character within a double-quoted field value,
 use two double-quote characters in a row. For example, let's add a
 field to John's record:
@@ -89,7 +89,7 @@ A patient roster does not require a header line, but you can provide one if you 
 
 Each record in a patient roster file contains the following fields, in the following order:
 
-1. \* Type of unique patient identitifer (e.g, MRN, Insurance member ID, etc.)
+1. \* Type of unique patient identifier (e.g., MRN, Insurance member ID, etc.)
 2. \* Unique patient identifier
 3. \* Last name
 4. \* First name
@@ -158,7 +158,7 @@ The preferred (but not required) format for US phone numbers is
 
 #### <a name="zip-format"></a>ZIP code format
 
-A ZIP code may be formatted either as a 5-digit ZIP or a hypenated ZIP+4.
+A ZIP code may be formatted either as a 5-digit ZIP or a hyphenated ZIP+4.
 So, `12201` and `12201-7050` are both valid.
 
 #### <a name="tag-details"></a>Tags
