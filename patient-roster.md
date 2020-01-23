@@ -1,4 +1,4 @@
-# Patient Roster Specification Version 1
+# Patient Roster Specification Version 2
 
 ## CSV
 
@@ -107,7 +107,7 @@ Each record in a patient roster file contains the following fields, in the follo
 7. \* [Sex](#sex-format)
 8. \* [Date of birth](#date-format)
 9. [SSN](#ssn-format)
-10. [Phone number](#phone-format)
+10. [Primary Phone number](#phone-format)
 11. Address line 1
 12. Address line 2
 13. City
@@ -132,6 +132,10 @@ Each record in a patient roster file contains the following fields, in the follo
 32. Tag 8
 33. Tag 9
 34. Tag 10
+35. Patient Email
+36. [Cell Phone number](#phone-format)
+37. [Work Phone number](#phone-format)
+38. Medicare Beneficiary Identifier / MBI
 
 Fields marked with (\*) are required to have non-empty values. Other
 fields are allowed to be empty, but non-empty values will be useful
