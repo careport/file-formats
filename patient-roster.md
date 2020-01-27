@@ -108,11 +108,11 @@ Each record in a patient roster file contains the following fields, in the follo
 8. \* [Date of birth](#date-format)
 9. [Social security number (SSN)](#ssn-format)
 10. [Home phone number](#phone-format)
-11. Address line 1
+11. +Address line 1
 12. Address line 2
-13. City
-14. State
-15. [ZIP code](#zip-format)
+13. \*City
+14. \*State
+15. \*[ZIP code](#zip-format)
 16. Care coordinator name
 17. Care coordinator [phone number](#phone-format)
 18. Care coordinator email
@@ -132,14 +132,14 @@ Each record in a patient roster file contains the following fields, in the follo
 32. Tag 8
 33. Tag 9
 34. Tag 10
-35. Patient email
-36. [Cell phone number](#phone-format)
-37. [Work phone number](#phone-format)
-38. Medicare beneficiary identifier (MBI)
+35. +Patient Email
+36. +[Cell Phone number](#phone-format)
+37. +[Work Phone number](#phone-format)
+38. +Medicare Beneficiary Identifier (MBI)
 
-Fields marked with (\*) are required to have non-empty values. Other
-fields are allowed to be empty, but non-empty values will be useful
-for matching patients.
+Fields marked with (\*) are required to have non-empty values. Fields
+marked with (+) are allowed to be empty, but non-empty values will be
+useful for matching patients.
 
 
 ### Field formats
