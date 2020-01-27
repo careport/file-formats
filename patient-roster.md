@@ -1,4 +1,4 @@
-# Patient Roster Specification Version 2
+# Patient Roster Specification Version 2 (errata 1)
 
 ## CSV
 
@@ -78,15 +78,15 @@ More on each:
 
 - The roster name is just a short, descriptive string that identifies the roster, e.g., "ACO" or "northeast." It should contain only letters and numbers.
 - The reporting period duration is either `month` or `week`.
-- The reporting period start date is the first date of the reporting period in ISO 8601 basic date format. For example, `20180301` is the first of March, 2018.
-- The timestamp is a UTC date and time in ISO 8601 basic date/time format. For example, `20180314T190400Z` is March 14, 2018 at 19:04 (i.e., 7:04PM) in UTC, or the same date at 3:04PM in US Eastern time.
-- The patient roster specification version is the version number of this document, preceded by `v`. For example, `v1` indicates that the file conforms to version 1 of the patient roster specification.
+- The reporting period start date is the first date of the reporting period in ISO 8601 basic date format. For example, `20200101` is the first of March, 2018.
+- The timestamp is a UTC date and time in ISO 8601 basic date/time format. For example, `20200114T190400Z` is January 14, 2020 at 19:04 (i.e., 7:04PM) in UTC, or the same date at 3:04PM in US Eastern time.
+- The patient roster specification version is the version number of this document, preceded by `v`. For example, `v2` indicates that the file conforms to version 2 of the patient roster specification.
 
 Putting those together, the file name would be:
 
- `ACO_month_20180301_20180314T190400Z_v1.csv`
+ `ACO_month_20200101_20200114T190400Z_v2.csv`
 
-Together, the reporting period duration and start date indicate that the patients listed in the file are members of the roster for that period. In our example above, each patient in the file would be considered a member of the `ACO` roster for the entire month of March 2018.
+Together, the reporting period duration and start date indicate that the patients listed in the file are members of the roster for that period. In our example above, each patient in the file would be considered a member of the `ACO` roster for the entire month of January 2020.
 
 
 ## Headers
@@ -103,11 +103,11 @@ Each record in a patient roster file contains the following fields, in the follo
 3. \* Last name
 4. \* First name
 5. Middle name
-6. Name suffix (e.g., "Jr.," "III", etc.)
+6. Name suffix (e.g., "Jr.", "III", etc.)
 7. \* [Sex](#sex-format)
 8. \* [Date of birth](#date-format)
-9. [SSN](#ssn-format)
-10. [Primary Phone number](#phone-format)
+9. [Social security number (SSN)](#ssn-format)
+10. [Home phone number](#phone-format)
 11. Address line 1
 12. Address line 2
 13. City
@@ -116,10 +116,10 @@ Each record in a patient roster file contains the following fields, in the follo
 16. Care coordinator name
 17. Care coordinator [phone number](#phone-format)
 18. Care coordinator email
-19. Primary Care Physician name
-20. Primary Care Physician NPI
-21. Primary Care Physician [phone number](#phone-format)
-22. Primary Care Physician email
+19. Primary care physician name
+20. Primary care physician NPI
+21. Primary care physician [phone number](#phone-format)
+22. Primary care physician email
 23. Primary payer
 24. Primary payer patient identification number
 25. [Tag 1](#tag-details)
@@ -132,10 +132,10 @@ Each record in a patient roster file contains the following fields, in the follo
 32. Tag 8
 33. Tag 9
 34. Tag 10
-35. Patient Email
-36. [Cell Phone number](#phone-format)
-37. [Work Phone number](#phone-format)
-38. Medicare Beneficiary Identifier / MBI
+35. Patient email
+36. [Cell phone number](#phone-format)
+37. [Work phone number](#phone-format)
+38. Medicare beneficiary identifier (MBI)
 
 Fields marked with (\*) are required to have non-empty values. Other
 fields are allowed to be empty, but non-empty values will be useful
@@ -162,14 +162,14 @@ These values are not case-sensitive. That is, `female`, `FEMALE`, and `Female` a
 
 #### <a name="ssn-format"></a>SSN format
 
-An SSN may be written with the traditional hyphenation or without.
-So, `123-45-6789` and `123456789` are both allowed.
+A SSN may be written with the traditional hyphenation or without.
+So, `123-45-6789` and `123456789` are both allowed.  Unknown or not applicable SSN should be omitted.
 
 
 #### <a name="phone-format"></a>Phone format
 
 The preferred (but not required) format for US phone numbers is
-`(123) 456-7890`.
+`(123) 456-7890`.  The Home phone number should be submitted if Cell phone number is submitted, even if they are the same number - i.e. submit the same number in both.
 
 
 #### <a name="zip-format"></a>ZIP code format
