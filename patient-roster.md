@@ -103,7 +103,7 @@ Each record in a patient roster file contains the following fields, in the follo
 3. \* Last name
 4. \* First name
 5. Middle name
-6. Name suffix (e.g., "Jr.", "III", etc.)
+6. Name suffix (e.g., `Jr.`, `III`, etc.)
 7. \* [Sex](#sex-format)
 8. \* [Date of birth](#date-format)
 9. [Social security number (SSN)](#ssn-format)
@@ -162,14 +162,14 @@ These values are not case-sensitive. That is, `female`, `FEMALE`, and `Female` a
 
 #### <a name="ssn-format"></a>SSN format
 
-A SSN may be written with the traditional hyphenation or without.
+An SSN may be written with the traditional hyphenation or without.
 So, `123-45-6789` and `123456789` are both allowed.  Unknown or not applicable SSN should be omitted.
 
 
 #### <a name="phone-format"></a>Phone format
 
 The preferred (but not required) format for US phone numbers is
-`(123) 456-7890`.  The Home phone number should be submitted if Cell phone number is submitted, even if they are the same number - i.e. submit the same number in both.
+`(123) 456-7890`.  The home phone number should be submitted if cell phone number is submitted, even if they are the same number  — i.e. submit the same number in both.
 
 
 #### <a name="zip-format"></a>ZIP code format
