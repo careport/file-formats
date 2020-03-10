@@ -1,4 +1,4 @@
-# Patient Roster Specification Version 2 (errata 1)
+# Patient Roster Specification Version 3
 
 ## CSV
 
@@ -80,11 +80,11 @@ More on each:
 - The reporting period duration is either `month` or `week`.
 - The reporting period start date is the first date of the reporting period in ISO 8601 basic date format. For example, `20200101` is the first of March, 2018.
 - The timestamp is a UTC date and time in ISO 8601 basic date/time format. For example, `20200114T190400Z` is January 14, 2020 at 19:04 (i.e., 7:04PM) in UTC, or the same date at 3:04PM in US Eastern time.
-- The patient roster specification version is the version number of this document, preceded by `v`. For example, `v2` indicates that the file conforms to version 2 of the patient roster specification.
+- The patient roster specification version is the version number of this document, preceded by `v`. For example, `v3` indicates that the file conforms to version 2 of the patient roster specification.
 
 Putting those together, the file name would be:
 
- `ACO_month_20200101_20200114T190400Z_v2.csv`
+ `ACO_month_20200101_20200114T190400Z_v3.csv`
 
 Together, the reporting period duration and start date indicate that the patients listed in the file are members of the roster for that period. In our example above, each patient in the file would be considered a member of the `ACO` roster for the entire month of January 2020.
 
@@ -136,6 +136,9 @@ Each record in a patient roster file contains the following fields, in the follo
 36. +[Cell phone number](#phone-format)
 37. +[Work phone number](#phone-format)
 38. +Medicare Beneficiary Identifier (MBI)
+39. Mother Maiden Name
+40. [Medicaid State Code](#medicaid-format)
+41. [Medicaid ID](#medicaid-format)
 
 Fields marked with (\*) are required to have non-empty values. If you
 have the data marked with (+), we strongly encourage you to send it,
@@ -185,3 +188,8 @@ You may provide up to 10 tags for each row in the CSV. CarePort will
 assign these tags as attributions for the patient identified in the row.
 Attributions enable end users to segment patient populations in searches,
 reports, and alerts.
+
+#### <a name="medicaid-format"></a>Medicaid
+
+If you provide the patient Medicaid number, you must provide BOTH the identifier and the state associated with the Medicaid identifier.  
+The state must be a standard 2 character abbreviation (e.g., `MA.`, `CA`, etc.)
