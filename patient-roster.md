@@ -1,4 +1,4 @@
-# Patient Roster Specification Version 2 (errata 1)
+# Patient Roster Specification Version 2 (errata 2)
 
 ## CSV
 
@@ -78,7 +78,9 @@ More on each:
 
 - The roster name is just a short, descriptive string that identifies the roster, e.g., "ACO" or "northeast." It should contain only letters and numbers.
 - The reporting period duration is either `month` or `week`.
-- The reporting period start date is the first date of the reporting period in ISO 8601 basic date format. For example, `20200101` is the first of March, 2018.
+- The reporting period start date is the first date of the reporting
+  period in ISO 8601 basic date format. For example, `20200101` is the
+  first of January, 2020.
 - The timestamp is a UTC date and time in ISO 8601 basic date/time format. For example, `20200114T190400Z` is January 14, 2020 at 19:04 (i.e., 7:04PM) in UTC, or the same date at 3:04PM in US Eastern time.
 - The patient roster specification version is the version number of this document, preceded by `v`. For example, `v2` indicates that the file conforms to version 2 of the patient roster specification.
 
@@ -98,7 +100,7 @@ A patient roster does not require a header line, but you can provide one if you 
 
 Each record in a patient roster file contains the following fields, in the following order:
 
-1. \* Type of unique patient identifier (from [FHIR identifier type value set](https://www.hl7.org/fhir/valueset-identifier-type.html))
+1. \* [Type of unique patient identifier](#unique-id-type)
 2. \* Unique patient identifier
 3. \* Last name
 4. \* First name
@@ -135,7 +137,7 @@ Each record in a patient roster file contains the following fields, in the follo
 35. +Patient email
 36. +[Cell phone number](#phone-format)
 37. +[Work phone number](#phone-format)
-38. +Medicare Beneficiary Identifier (MBI)
+38. +[Medicare Beneficiary Identifier (MBI)](#mbi-format)
 
 Fields marked with (\*) are required to have non-empty values. If you
 have the data marked with (+), we strongly encourage you to send it,
@@ -144,6 +146,33 @@ accurate information about your patients.
 
 
 ### Field formats
+#### <a name="unique-id-type"></a>Type of unique patient identifier
+
+This is a short code (usually 2-4 characters in length), in all
+capital letters, that indicates what kind of unique id you are
+providing for each patient in your roster. You can find a list of such
+codes [here](https://hl7-definition.caristix.com/v2/HL7v2.5.1/Tables/0203).
+
+You are most likely to use one of the following:
+
+- `MR`: medical record number
+- `PI`: patient internal identifier
+- `PT`: patient external identifier
+- `MB`: member number, indicating an insured member of an insurance policy
+- `SN`: subscriber number, indicating the subscriber insurance
+policy<sup>†</sup>
+- `SS`: Social Security number
+- `MA`: Medicaid number
+- `MC`: Medicare number
+
+If none of these fit, and you are unsure of what to use, please ask
+us.
+
+<sup>†</sup> If your roster contains multiple individuals who are all
+covered by the same subscriber's policy, then you'll probably want to
+use `MB` instead of `SN`, because a given patient identifier must
+appear only once in the entire file.
+
 #### <a name="date-format"></a>Date format
 
 The date of birth should be in the ISO 8601 _extended_ date format, `yyyy-mm-dd`, e.g., `2018-03-14`.
@@ -158,7 +187,18 @@ Five different values are allowed for `sex`:
 - `unknown`
 - `ambiguous`
 
-These values are not case-sensitive. That is, `female`, `FEMALE`, and `Female` all mean the same thing. Additionally, `female` may be abbreviated as `f` or `F`, and, similarly, `male` may be abbreviated as `m` or `M`.
+These values are not case-sensitive. That is, `female`, `FEMALE`, and
+`Female` all mean the same thing. Additionally, each option may be
+abbreviated by its first letter. So, the all of the values in each row
+of the following table have the same meaning:
+
+|           |           |           |   |   |
+|-----------|-----------|-----------|---|---|
+| FEMALE    | female    | Female    | f | F |
+| MALE      | male      | Male      | m | M |
+| OTHER     | other     | Other     | o | O |
+| UNKNOWN   | unknown   | Unknown   | u | U |
+| AMBIGUOUS | ambiguous | Ambiguous | a | A |
 
 
 #### <a name="ssn-format"></a>SSN format
@@ -169,8 +209,20 @@ So, `123-45-6789` and `123456789` are both allowed.  Unknown or not applicable S
 
 #### <a name="phone-format"></a>Phone format
 
-The preferred (but not required) format for US phone numbers is
-`(123) 456-7890`.  The home phone number should be submitted if cell phone number is submitted, even if they are the same number  — i.e. submit the same number in both.
+Phone numbers are expected to be 10-digit US phone numbers, with
+optional parentheses, dashes, and spaces as delimiters. The following
+are all valid formats for the same phone number:
+- `(123) 456-7890`
+- `123-456-7890`
+- `1234567890`
+
+This format does not allow extensions or non-US phone
+numbers. Extensions should be removed, and non-US phone numbers should
+be omitted altogether.
+
+The home phone number should be submitted if cell phone number is
+submitted, even if they are the same number — i.e. submit the same
+number in both.
 
 
 #### <a name="zip-format"></a>ZIP code format
@@ -185,3 +237,18 @@ You may provide up to 10 tags for each row in the CSV. CarePort will
 assign these tags as attributions for the patient identified in the row.
 Attributions enable end users to segment patient populations in searches,
 reports, and alerts.
+
+
+#### <a name="mbi-format"></a>MBI format
+
+The syntax of a Medicare Beneficiary Id is specified by
+CMS in
+[this document](https://www.cms.gov/Medicare/New-Medicare-Card/Understanding-the-MBI-with-Format.pdf).
+
+We will accept MBIs that use upper or lower-case letters, with or
+without dashes, but internally we will normalize them to all-caps
+without dashes.
+
+Note that a Medicate Beneficiary Id (MBI) is _not_ the same thing as an old-
+style Health Insurance Claim Number (HICN). HICNs are based on Social
+Security Numbers, but MBIs are not.
