@@ -1,4 +1,4 @@
-# Patient Roster Specification Version 2 (errata 2)
+# Patient Roster Specification Version 2 (errata 3)
 
 ## CSV
 
@@ -77,7 +77,7 @@ rest of the file name by a period (`.`).
 More on each:
 
 - The roster name is just a short, descriptive string that identifies the roster, e.g., "ACO" or "northeast." It should contain only letters and numbers.
-- The reporting period duration is either `month` or `week`.
+- The reporting period duration is either `day`, `month`, `quarter`, or `year`.
 - The reporting period start date is the first date of the reporting
   period in ISO 8601 basic date format. For example, `20200101` is the
   first of January, 2020.
